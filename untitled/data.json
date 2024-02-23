@@ -1,0 +1,19 @@
+{
+  "zxczxcz": {
+    "id": 1,
+    "name": "zxczxcz",
+    "coordinates": {
+      "x": 10,
+      "y": 10.0
+    },
+    "creationDate": "2024-02-24T00:02:22.541198400",
+    "health": 55.0,
+    "category": "ASSAULT",
+    "weaponType": "HEAVY_BOLTGUN",
+    "meleeWeapon": "MANREAPER",
+    "chapter": {
+      "name": "sdfsdfa",
+      "world": "asdfsdf"
+    }
+  }
+}
