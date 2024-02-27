@@ -40,7 +40,6 @@ public class Parser
             }
             return spaceMarines;
         } catch (Exception e) {
-            System.out.println("Json is damaged data was not taken from it");
             return new LinkedHashMap<String, SpaceMarine>();
         }
     }
