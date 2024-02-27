@@ -15,7 +15,8 @@ import static Collection.SpaceMarine.validateAllValues;
 public class Main
 {
     public static void
-    main(String[] args) throws IOException
+    main
+    (String[] args) throws IOException
     {
         Scanner scanner = new Scanner(System.in);
         Parser parser = new Parser();
