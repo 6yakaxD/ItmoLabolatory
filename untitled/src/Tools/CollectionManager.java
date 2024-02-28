@@ -2,7 +2,6 @@ package Tools;
 
 import Collection.AstartesCategory;
 import Collection.SpaceMarine;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 import java.util.*;
 
