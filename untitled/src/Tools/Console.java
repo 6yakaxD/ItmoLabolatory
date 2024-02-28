@@ -3,6 +3,7 @@ package Tools;
 import Commands.ACommand;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Console
@@ -19,32 +20,39 @@ public class Console
 
     public void interactiveModeInit() throws IOException {
         String[] userCommand;
-        do
+        try
         {
-            System.out.print(userMsg);
-
-            String input = scanner.nextLine();
-            if (input.isEmpty())
+            do
             {
-                continue;
-            }
-            userCommand = input.split("\\s+");
+                System.out.print(userMsg);
 
-            ACommand command = commandManager.getCommand(userCommand[0]);
+                String input = scanner.nextLine();
+                if (input.isEmpty())
+                {
+                    continue;
+                }
+                userCommand = input.split("\\s+");
 
-            if (command != null)
-            {
-                command.launch(userCommand);
+                ACommand command = commandManager.getCommand(userCommand[0]);
+
+                if (command != null)
+                {
+                    command.launch(userCommand);
+                }
+                else
+                {
+                    System.out.println("Seems command <" + userCommand[0] + "> not exists. Try to use <help> to get information about all commands");
+                }
             }
-            else
-            {
-                System.out.println("Seems command <" + userCommand[0] + "> not exists. Try to use <help> to get information about all commands");
-            }
+            while (true);
         }
-        while (true);
-
+        catch (NoSuchElementException e)
+        {
+            System.out.println("End of input reached.");
+        }
+        finally
+        {
+            scanner.close();
+        }
     }
-
-
-
 }
