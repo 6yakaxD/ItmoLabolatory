@@ -64,7 +64,7 @@ public class update extends ACommand
 
             System.out.println(spaceMarine);
 
-            System.out.println("Object <" + spaceMarine.getName() + ">  with Id <" + spaceMarine.getId() + "was successfully updated with all attributed");
+            System.out.println("Object <" + spaceMarine.getName() + "> with Id <" + spaceMarine.getId() + "> was successfully updated with all attributed");
 
             return true;
         }

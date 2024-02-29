@@ -32,7 +32,6 @@ public class insert extends ACommand
             spaceMarine.setId(collectionManager.generate_new_id_for_element());
             spaceMarine.setName(asker.askName());
             coordinates.setX(asker.askX());
-            coordinates.setX(asker.askX());
             coordinates.setY(asker.askY());
             spaceMarine.setCoordinates(coordinates);
             spaceMarine.setCreationDate(asker.askCreationDate());

@@ -26,7 +26,7 @@ public class Main
             addCommand("show", new show(collection_manager));
             addCommand("info", new info(collection_manager));
             addCommand("clear", new clear(collection_manager));
-            addCommand("remove_key", new remove_name(collection_manager));
+            addCommand("remove_id", new remove_id(collection_manager));
             addCommand("print_field_ascending_category", new print_field_ascending_category(collection_manager));
             addCommand("count_greater_than_health", new count_greater_than_health(collection_manager));
             addCommand("count_less_than_health", new count_less_than_health(collection_manager));

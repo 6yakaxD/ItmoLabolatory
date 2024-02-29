@@ -13,7 +13,7 @@ public class replace_if_lowe extends ACommand
     private Scanner scanner;
     public replace_if_lowe(CollectionManager collectionManager, Scanner scanner)
     {
-        super("replace_if_lowe [elem_name] [health_value]", "replace a value by name if the new health value is less than the old one");
+        super("replace_if_lowe [elem_id] [health_value]", "replace a value by id if the new health value is less than the old one");
         this.collectionManager = collectionManager;
         this.scanner = scanner;
     }
@@ -22,10 +22,11 @@ public class replace_if_lowe extends ACommand
     public boolean launch(String[] command) {
         if(command.length == 3)
         {
-            SpaceMarine spaceMarine = collectionManager.get_element_by_name(command[1]);
+            long ID = Long.parseLong(command[1]);
+            SpaceMarine spaceMarine = collectionManager.get_element_by_id(ID);
             if (spaceMarine == null)
             {
-                System.out.println("-----=[ no such element with name <" + command[1] + "> ]=-----");
+                System.out.println("-----=[ no such element with id <" + command[1] + "> ]=-----");
             }
             else {
                 String health;

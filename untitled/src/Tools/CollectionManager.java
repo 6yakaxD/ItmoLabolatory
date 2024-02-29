@@ -78,14 +78,15 @@ public class CollectionManager
         return null;
     }
 
-    public void remove_element_by_name(String name)
+    public void remove_element_by_id(long id)
     {
-        if (name != null)
+        SpaceMarine spaceMarine = get_element_by_id(id);
+        if (spaceMarine != null)
         {
-            main_collection.remove(get_element_by_name(name));
+            main_collection.remove(spaceMarine);
         }
         else {
-            System.out.println("-----=[ no suck element " + name + " ]=-----");
+            System.out.println("-----=[ no suck element with id " + id + " ]=-----");
         }
 
     }

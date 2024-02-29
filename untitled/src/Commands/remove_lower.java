@@ -10,7 +10,7 @@ public class remove_lower extends ACommand
 
     public remove_lower(CollectionManager collectionManager)
     {
-        super("remove_lower [element_name]", "remove from a collection all elements which health greater than a given value");
+        super("remove_lower [health]", "remove from a collection all elements which health lower than a given value");
         this.collectionManager = collectionManager;
     }
 
