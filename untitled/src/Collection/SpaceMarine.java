@@ -86,7 +86,14 @@ public class SpaceMarine implements Comparable<SpaceMarine>
     }
 
 
-
+    /**
+     * @brief        Validator of all object field
+     *               according lab condition
+     * @param        spaceMarine -> SpaceMarine main
+     *                              object's class
+     * @return       bool value depending on the
+     *               correct validation
+     */
     public static boolean validateAllValues(SpaceMarine spaceMarine)
     {
         if (spaceMarine.id <= 0) return false;
@@ -102,6 +109,13 @@ public class SpaceMarine implements Comparable<SpaceMarine>
         return true;
     }
 
+    /**
+     * @brief        Updator of all object field
+     *               according lab condition
+     * @param        spaceMarine -> SpaceMarine main
+     *                              object's class
+     * @return       void
+     */
     public void update(SpaceMarine spaceMarine) {
         this.name = spaceMarine.name;
         this.coordinates = spaceMarine.coordinates;

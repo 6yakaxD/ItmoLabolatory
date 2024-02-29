@@ -24,7 +24,6 @@ public class save extends ACommand
         {
 
             parser.writeToFile("data.json", parser.getJsonFromStack(collectionManager.get_main_collection()));
-
             return true;
         }
         else

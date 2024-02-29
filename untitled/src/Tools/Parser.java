@@ -53,11 +53,11 @@ public class Parser {
         }
         catch (Exception e)
         {
-            System.out.println("Json-файл повреждён, данные из него не были взяты. Коллекция, с которой вы работаете пуста");
+            System.out.println("-----=[ json file broken ]=-----");
         }
         catch (NotCorrectJsonData e)
         {
-            System.out.println("Not correct json data");
+            System.out.println("-----=[ not correct json data ]=-----");
         }
         return new ArrayList<>();
     }
@@ -74,7 +74,7 @@ public class Parser {
             return gson.toJson(spaceMarine);
         } catch (Exception e) {
             System.out.println(e.toString());
-            return "ошибка парсинга";
+            return "parsing error";
         }
     }
 
@@ -93,7 +93,7 @@ public class Parser {
         try {
 
             if (!filePath.canRead()) throw new NotEnoughRightsReadException();
-            if (!filePath.canWrite()) System.out.println("Внимание! Вы не сможете использовать команду save!");
+            if (!filePath.canWrite()) System.out.println("-----=[ you have not got rights to write in it ]=-----");
 
             inputStreamReader = new InputStreamReader(new FileInputStream(fileName));
             StringBuilder stringFile = new StringBuilder();
@@ -105,10 +105,10 @@ public class Parser {
             inputStreamReader.close();
             return stringFile.toString();
         } catch (NotEnoughRightsReadException e) {
-            System.out.println(e + " Коллекция пуста!");
+            System.out.println(e.toString());
             return "";
         } catch (IOException e) {
-            System.out.println("Json-файл не найден. Коллекция пуста!");
+            System.out.println("-----=[ json file not found ]=-----");
             return "";
         }
     }
@@ -127,12 +127,12 @@ public class Parser {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName));
             char[] chars = text.toCharArray();
             outputStreamWriter.write(chars, 0, chars.length);
-            System.out.println("Коллекция была успешно сохранена");
+            System.out.println("-----=[ collection was saved to json ]=-----");
             outputStreamWriter.close();
         } catch (NotEnoughRightsWriteException e) {
             System.out.println(e.toString());
         } catch (IOException e) {
-            System.out.println("ошибка при записи файла!");
+            System.out.println("-----=[ write file error ]=-----");
         }
     }
 

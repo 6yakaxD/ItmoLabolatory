@@ -40,6 +40,7 @@ public class get_from_json extends ACommand
                 }
                 if (count_suck_validate == 0){
                     collectionManager.set_main_collection(marine);
+                    System.out.println("-----=[ data was correctly added ]=-----");
                 }
                 else {
                     System.out.println("-----=[ data from json validated not correct ]=-----");
