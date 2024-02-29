@@ -15,9 +15,7 @@ import static Collection.SpaceMarine.validateAllValues;
 
 public class Main
 {
-    public static void
-    main
-    (String[] args) throws IOException
+    public static void main(String[] path_from_command) throws IOException
     {
         Scanner scanner = new Scanner(System.in);
         Parser parser = new Parser();
@@ -56,27 +54,52 @@ public class Main
 
         try
         {
-            String path;
-            System.out.println("Enter the path to json from which you " +
-                    "want to read the collection or press ENTER to skip");
-            System.out.print("> ");
-            path = scanner.nextLine();
-            LinkedHashMap<String, SpaceMarine> marine =
-                    parser.getLinckeHashMapFromJson(parser.readFromFile(path));
-            if (marine != null) {
-                int count_suck_validate = 0;
-                for (Map.Entry<String, SpaceMarine> entry : marine.entrySet()) {
-                    SpaceMarine spaceMarine = entry.getValue();
-                    if(!validateAllValues(spaceMarine)){
-                        count_suck_validate +=1;
+            if (path_from_command.length != 0)
+            {
+                String path = path_from_command[0];
+                LinkedHashMap<String, SpaceMarine> marine =
+                        parser.getLinckeHashMapFromJson(parser.readFromFile(path));
+                if (marine != null) {
+                    int count_suck_validate = 0;
+                    for (Map.Entry<String, SpaceMarine> entry : marine.entrySet()) {
+                        SpaceMarine spaceMarine = entry.getValue();
+                        if(!validateAllValues(spaceMarine)){
+                            count_suck_validate +=1;
+                        }
+                    }
+                    if (count_suck_validate == 0){
+                        clcmng.setSpaceMarineCollection(marine);
+                    }
+                    else {
+                        System.out.println("Some data validated not correct in json");
+                        System.out.println("Data was not insert in collection");
                     }
                 }
-                if (count_suck_validate == 0){
-                    clcmng.setSpaceMarineCollection(marine);
-                }
-                else {
-                    System.out.println("Some data validated not correct in json");
-                    System.out.println("Data was not insert in collection");
+            }
+            else {
+
+                String path;
+                System.out.println("Enter the path to json from which you " +
+                        "want to read the collection or press ENTER to skip");
+                System.out.print("> ");
+                path = scanner.nextLine();
+                LinkedHashMap<String, SpaceMarine> marine =
+                        parser.getLinckeHashMapFromJson(parser.readFromFile(path));
+                if (marine != null) {
+                    int count_suck_validate = 0;
+                    for (Map.Entry<String, SpaceMarine> entry : marine.entrySet()) {
+                        SpaceMarine spaceMarine = entry.getValue();
+                        if(!validateAllValues(spaceMarine)){
+                            count_suck_validate +=1;
+                        }
+                    }
+                    if (count_suck_validate == 0){
+                        clcmng.setSpaceMarineCollection(marine);
+                    }
+                    else {
+                        System.out.println("Some data validated not correct in json");
+                        System.out.println("Data was not insert in collection");
+                    }
                 }
             }
             console.interactiveModeInit();

@@ -10,7 +10,7 @@ public class save extends ACommand
     Parser parser;
     public save(CollectionManager collectionManager, Parser parser)
     {
-        super("save", "save current collection in xml file");
+        super("save", "save current collection in json file");
         this.collectionManager = collectionManager;
         this.parser = parser;
     }
