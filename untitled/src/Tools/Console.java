@@ -3,6 +3,8 @@ package Tools;
 import Commands.ACommand;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -11,6 +13,7 @@ public class Console
     public final String userMsg = "> ";
     private Scanner scanner;
     private CommandManager commandManager;
+
 
     public Console(Scanner scanner, CommandManager commandManager)
     {
