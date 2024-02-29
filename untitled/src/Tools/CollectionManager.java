@@ -7,6 +7,16 @@ import java.util.*;
 
 public class CollectionManager
 {
+    // сделать ArrayList
+
+    ArrayList<SpaceMarine> main_collection = new ArrayList<SpaceMarine>();
+
+    public void set_main_collection(ArrayList<SpaceMarine> main_collection)
+    {
+        this.main_collection = main_collection;
+    }
+
+
     LinkedHashMap<String, SpaceMarine> spaceMarines = new LinkedHashMap<>();
 
     public void setSpaceMarineCollection(LinkedHashMap<String, SpaceMarine> collection)
