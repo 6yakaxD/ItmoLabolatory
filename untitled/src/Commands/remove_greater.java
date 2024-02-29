@@ -1,7 +1,5 @@
 package Commands;
 
-import Collection.SpaceMarine;
-import Commands.ACommand;
 import Tools.CollectionManager;
 
 public class remove_greater extends ACommand
@@ -10,7 +8,7 @@ public class remove_greater extends ACommand
 
     public remove_greater(CollectionManager collectionManager)
     {
-        super("remove_greater [element_key]", "remove from a collection all elements greater than a given value");
+        super("remove_greater [element_name]", "remove from a collection all elements which health greater than a given value");
         this.collectionManager = collectionManager;
     }
 
@@ -23,11 +21,7 @@ public class remove_greater extends ACommand
         }
         else
         {
-            System.out.println("command <" + getName() + "> expect 1 argument");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            System.out.println("-----=[ <" + getName() + "> expect 1 argument ]=-----");
             return false;
         }
     }

@@ -1,7 +1,6 @@
 package Commands;
 
 import Collection.SpaceMarine;
-import Commands.ACommand;
 import CustomExeptions.MustBeNotEmptyException;
 import Tools.CollectionManager;
 
@@ -47,11 +46,7 @@ public class count_less_than_health extends ACommand
         }
         else
         {
-            System.out.println("command <" + getName() + "> expect 1 argument");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            System.out.println("-----=[ <" + getName() + "> expect 1 argument ]=-----");
             return false;
         }
     }

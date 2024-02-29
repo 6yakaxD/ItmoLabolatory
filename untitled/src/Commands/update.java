@@ -70,11 +70,7 @@ public class update extends ACommand
         }
         else
         {
-            System.out.println("command <" + getName() + "> expect 1 argument");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            System.out.println("-----=[ <" + getName() + "> expect 1 argument ]=-----");
             return false;
         }
     }

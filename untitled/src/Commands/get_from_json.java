@@ -15,7 +15,7 @@ public class get_from_json extends ACommand
     Parser parser;
     public get_from_json(CollectionManager collectionManager, Parser parser)
     {
-        super("get_from_json [file_path]", "get data about collection from xml");
+        super("get_from_json [file_path]", "get data about collection from json");
         this.collectionManager = collectionManager;
         this.parser = parser;
     }
@@ -45,11 +45,7 @@ public class get_from_json extends ACommand
         }
         else
         {
-            System.out.println("command <" + getName() + "> expect 1 argument");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            System.out.println("-----=[ <" + getName() + "> expect 1 argument ]=-----");
             return false;
         }
 

@@ -1,6 +1,5 @@
 package Commands;
 
-import Commands.ACommand;
 import Tools.CollectionManager;
 
 public class info extends ACommand
@@ -9,7 +8,7 @@ public class info extends ACommand
 
     public info(CollectionManager collectionManager)
     {
-        super("info", "print information about the collection to standard output");
+        super("info", "print information about the collection");
         this.collectionManager = collectionManager;
     }
 
@@ -22,11 +21,7 @@ public class info extends ACommand
         }
         else
         {
-            System.out.println("command <" + getName() + "> does not expect any arguments");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            no_need_args(command, getName());
             return false;
         }
 

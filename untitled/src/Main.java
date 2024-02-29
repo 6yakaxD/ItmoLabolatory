@@ -15,50 +15,39 @@ import static Collection.SpaceMarine.validateAllValues;
 
 public class Main
 {
-    public static void main(String[] path_from_command) throws IOException
+    public static void main(String[] console_input) throws IOException
     {
         Scanner scanner = new Scanner(System.in);
         Parser parser = new Parser();
-        CollectionManager clcmng = new CollectionManager();
-        CommandManager cmdmng = new CommandManager()
+        CollectionManager collection_manager = new CollectionManager();
+        CommandManager command_manager = new CommandManager()
         {{
             addCommand("help", new help(this));
             addCommand("exit", new exit());
-            addCommand("execute_script",
-                    new execute_script(this, scanner, clcmng));
-            addCommand("insert",
-                    new insert(scanner, clcmng));
-            addCommand("show", new show(clcmng));
-            addCommand("info", new info(clcmng));
-            addCommand("clear", new clear(clcmng));
-            addCommand("remove_key",
-                    new remove_key(clcmng));
-            addCommand("print_field_ascending_category",
-                    new print_field_ascending_category(clcmng));
-            addCommand("count_greater_than_health",
-                    new count_greater_than_health(clcmng));
-            addCommand("count_less_than_health",
-                    new count_less_than_health(clcmng));
-            addCommand("remove_greater",
-                    new remove_greater(clcmng));
-            addCommand("remove_lower",
-                    new remove_lower(clcmng));
-            addCommand("replace_if_lowe",
-                    new replace_if_lowe(clcmng, scanner));
-            addCommand("update", new update(clcmng, scanner));
-            addCommand("save", new save(clcmng, parser));
-            addCommand("get_from_json",
-                    new get_from_json(clcmng, parser));
+            addCommand("execute_script", new execute_script(this, scanner, collection_manager));
+            addCommand("insert", new insert(scanner, collection_manager));
+            addCommand("show", new show(collection_manager));
+            addCommand("info", new info(collection_manager));
+            addCommand("clear", new clear(collection_manager));
+            addCommand("remove_key", new remove_key(collection_manager));
+            addCommand("print_field_ascending_category", new print_field_ascending_category(collection_manager));
+            addCommand("count_greater_than_health", new count_greater_than_health(collection_manager));
+            addCommand("count_less_than_health", new count_less_than_health(collection_manager));
+            addCommand("remove_greater", new remove_greater(collection_manager));
+            addCommand("remove_lower", new remove_lower(collection_manager));
+            addCommand("replace_if_lowe", new replace_if_lowe(collection_manager, scanner));
+            addCommand("update", new update(collection_manager, scanner));
+            addCommand("save", new save(collection_manager, parser));
+            addCommand("get_from_json", new get_from_json(collection_manager, parser));
         }};
-        Console console = new Console(scanner, cmdmng);
+        Console console = new Console(scanner, command_manager);
 
         try
         {
-            if (path_from_command.length != 0)
+            if (console_input.length == 1)
             {
-                String path = path_from_command[0];
-                LinkedHashMap<String, SpaceMarine> marine =
-                        parser.getLinckeHashMapFromJson(parser.readFromFile(path));
+                String path = console_input[0];
+                LinkedHashMap<String, SpaceMarine> marine = parser.getLinckeHashMapFromJson(parser.readFromFile(path));
                 if (marine != null) {
                     int count_suck_validate = 0;
                     for (Map.Entry<String, SpaceMarine> entry : marine.entrySet()) {
@@ -68,37 +57,10 @@ public class Main
                         }
                     }
                     if (count_suck_validate == 0){
-                        clcmng.setSpaceMarineCollection(marine);
+                        collection_manager.setSpaceMarineCollection(marine);
                     }
                     else {
-                        System.out.println("Some data validated not correct in json");
-                        System.out.println("Data was not insert in collection");
-                    }
-                }
-            }
-            else {
-
-                String path;
-                System.out.println("Enter the path to json from which you " +
-                        "want to read the collection or press ENTER to skip");
-                System.out.print("> ");
-                path = scanner.nextLine();
-                LinkedHashMap<String, SpaceMarine> marine =
-                        parser.getLinckeHashMapFromJson(parser.readFromFile(path));
-                if (marine != null) {
-                    int count_suck_validate = 0;
-                    for (Map.Entry<String, SpaceMarine> entry : marine.entrySet()) {
-                        SpaceMarine spaceMarine = entry.getValue();
-                        if(!validateAllValues(spaceMarine)){
-                            count_suck_validate +=1;
-                        }
-                    }
-                    if (count_suck_validate == 0){
-                        clcmng.setSpaceMarineCollection(marine);
-                    }
-                    else {
-                        System.out.println("Some data validated not correct in json");
-                        System.out.println("Data was not insert in collection");
+                        System.out.println("-----=[ data from json validated not correct ]=-----");
                     }
                 }
             }
@@ -106,7 +68,7 @@ public class Main
         }
         catch (NoSuchElementException e)
         {
-            System.out.println("End of input reached.");
+            System.out.println("-----=[ end of input ]=-----");
         }
         finally
         {

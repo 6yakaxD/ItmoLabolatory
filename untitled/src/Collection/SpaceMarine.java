@@ -179,8 +179,7 @@ public class SpaceMarine implements Comparable<SpaceMarine>
                 "\nMelee Weapon: " + getMeleeWeapon() +
                 "\nChapter: " +
                 "\n\tname: " + getChapter().getName() +
-                "\n\tworld: " + getChapter().getWorld() +
-                "\n";
+                "\n\tworld: " + getChapter().getWorld();
 
         return ans;
     }

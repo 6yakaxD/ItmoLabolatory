@@ -1,10 +1,8 @@
 package Commands;
 
 import Collection.SpaceMarine;
-import Commands.ACommand;
 import Tools.CollectionManager;
 
-import java.util.Collection;
 import java.util.Map;
 
 public class show extends ACommand
@@ -23,7 +21,7 @@ public class show extends ACommand
         {
             if (collectionManager.getSpaceMarineCollection().isEmpty())
             {
-                System.out.println("Collection is empty");
+                System.out.println("-----=[ collection is empty ]=-----");
             }
             else
             {
@@ -36,11 +34,7 @@ public class show extends ACommand
         }
         else
         {
-            System.out.println("command <" + getName() + "> does not expect any arguments");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            no_need_args(command, getName());
             return false;
         }
     }

@@ -5,7 +5,6 @@ import Collection.*;
 import CustomExeptions.MustBeLessThan617;
 import CustomExeptions.MustBeMoreThanZero;
 import CustomExeptions.MustBeNotEmptyException;
-import CustomExeptions.ScriptRecursionException;
 import Tools.CollectionManager;
 import Tools.CommandManager;
 import Tools.element_info;
@@ -23,7 +22,7 @@ public class execute_script extends ACommand
     CollectionManager collectionManager;
     public execute_script(CommandManager commandManager, Scanner scanner, CollectionManager collectionManager)
     {
-        super("execute_script [file_path]", "read and execute the script from the specified file. The script contains commands in the same form in which the user enters them interactively");
+        super("execute_script [file_path]", "read and execute the script from the specified file");
         this.commandManager = commandManager;
         this.scanner = scanner;
         this.collectionManager = collectionManager;
@@ -684,12 +683,9 @@ public class execute_script extends ACommand
             processedFiles.remove(filePath);
             return true;
         }
-        else {
-            System.out.println("command <" + getName() + "> expect 1 argument:");
-            System.out.println(getName() + " [ script_path ]");
-            for (int i = 1; i < command.length; i++) {
-                System.out.println("unused argument -> " + command[i]);
-            }
+        else
+        {
+            System.out.println("-----=[ <" + getName() + "> expect 1 argument ]=-----");
             return false;
         }
 

@@ -1,6 +1,5 @@
 package Commands;
 
-import Commands.ACommand;
 import Tools.CommandManager;
 
 public class help extends ACommand
@@ -18,18 +17,13 @@ public class help extends ACommand
     {
         if(command.length == 1)
         {
-            System.out.println("-----=[ Command List ]=-----");
             commandManager.getCommands().values().stream().map(ACommand::toString).forEach(System.out::println);
 
             return true;
         }
         else
         {
-            System.out.println("command <" + getName() + "> does not expect any arguments");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            no_need_args(command, getName());
             return false;
         }
 

@@ -27,11 +27,11 @@ public class Console
                 System.out.print(userMsg);
 
                 String input = scanner.nextLine();
-                if (input.isEmpty())
+                if ((input.isEmpty()) || (input == null) || (input.trim().isEmpty()))
                 {
                     continue;
                 }
-                userCommand = input.split("\\s+");
+                userCommand = input.trim().split("\\s+");
 
                 ACommand command = commandManager.getCommand(userCommand[0]);
 
@@ -41,14 +41,14 @@ public class Console
                 }
                 else
                 {
-                    System.out.println("Seems command <" + userCommand[0] + "> not exists. Try to use <help> to get information about all commands");
+                    System.out.println("-----=[ <" + userCommand[0] + "> not found use <help> ]=-----");
                 }
             }
             while (true);
         }
         catch (NoSuchElementException e)
         {
-            System.out.println("End of input reached.");
+            System.out.println("-----=[ end of input reached ]=-----");
         }
         finally
         {

@@ -1,11 +1,9 @@
 package Commands;
 
 import Collection.SpaceMarine;
-import Commands.ACommand;
 import CustomExeptions.MustBeNotEmptyException;
 import Tools.CollectionManager;
 
-import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 
@@ -15,7 +13,7 @@ public class replace_if_lowe extends ACommand
     private Scanner scanner;
     public replace_if_lowe(CollectionManager collectionManager, Scanner scanner)
     {
-        super("replace_if_lowe [elem_key] [health_value]", "replace a value by key if the new value is less than the old one");
+        super("replace_if_lowe [elem_name] [health_value]", "replace a value by name if the new health value is less than the old one");
         this.collectionManager = collectionManager;
         this.scanner = scanner;
     }
@@ -61,11 +59,7 @@ public class replace_if_lowe extends ACommand
         }
         else
         {
-            System.out.println("command <" + getName() + "> expect 2 arguments");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            System.out.println("-----=[ <" + getName() + "> expect 2 argument ]=-----");
             return false;
         }
     }

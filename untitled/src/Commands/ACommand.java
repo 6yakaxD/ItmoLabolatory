@@ -23,6 +23,17 @@ public abstract class ACommand
 
     public abstract boolean launch(String[] command) throws IOException;
 
+    public static void no_need_args(String[] command, String name)
+    {
+        System.out.println("-----=[ <" + name + "> does not expect any arguments ]=-----");
+        /*
+        for (int i=1; i<command.length; i++)
+        {
+            System.out.println("unused argument -> " + command[i]);
+        }
+        */
+    }
+
     @Override
     public String toString() {
         return String.format("%s -> %s", getName(), getDescription());

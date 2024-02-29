@@ -61,8 +61,8 @@ public class CollectionManager
     }
 
     public String getInfoAboutCollection(){
-        return "Type - " + spaceMarines.getClass() + "\n" +
-                "Amount of elements - " + spaceMarines.size();
+        return "type - " + spaceMarines.getClass() + "\n" +
+                "count - " + spaceMarines.size();
     }
 
     public long generateNewIdForElement()

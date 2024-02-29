@@ -1,6 +1,5 @@
 package Commands;
 
-import Commands.ACommand;
 import Tools.CollectionManager;
 
 
@@ -10,7 +9,7 @@ public class remove_key extends ACommand
 
     public remove_key(CollectionManager collectionManager)
     {
-        super("remove_key [element_key]", "remove an element from a collection by its key");
+        super("remove_key [element_name]", "remove an element from a collection by its name");
         this.collectionManager = collectionManager;
     }
 
@@ -23,12 +22,7 @@ public class remove_key extends ACommand
         }
         else
         {
-            System.out.println("command <" + getName() + "> expect 1 argument:");
-            System.out.println(getName() + " [ key_value ]");
-            for (int i=1; i<command.length; i++)
-            {
-                System.out.println("unused argument -> " + command[i]);
-            }
+            System.out.println("-----=[ <" + getName() + "> expect 1 argument ]=-----");
             return false;
         }
 
