@@ -7,7 +7,7 @@ import CustomExeptions.MustBeMoreThanZero;
 import CustomExeptions.MustBeNotEmptyException;
 import Tools.CollectionManager;
 import Tools.CommandManager;
-import Tools.element_info;
+import Tools.ElementInfo;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -80,7 +80,7 @@ public class execute_script extends ACommand
                     if(total_script_command.length == 11){
                         Coordinates coordinates = new Coordinates();
                         Chapter chapter = new Chapter();
-                        element_info asker = new element_info();
+                        ElementInfo asker = new ElementInfo();
                         String keyToAddInCollectionManager = total_script_command[1];
                         SpaceMarine spaceMarine = new SpaceMarine();
 
@@ -357,7 +357,7 @@ public class execute_script extends ACommand
                     if (total_script_command.length == 11){
                         Coordinates coordinates = new Coordinates();
                         Chapter chapter = new Chapter();
-                        element_info asker = new element_info();
+                        ElementInfo asker = new ElementInfo();
 
                         SpaceMarine space_marine_local = new SpaceMarine();
 

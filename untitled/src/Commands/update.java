@@ -5,7 +5,7 @@ import Collection.Coordinates;
 import Collection.SpaceMarine;
 import CustomExeptions.MustBeNotEmptyException;
 import Tools.CollectionManager;
-import Tools.element_info;
+import Tools.ElementInfo;
 
 import java.util.Scanner;
 
@@ -14,8 +14,8 @@ public class update extends ACommand
 {
     private final Scanner scanner;
     private CollectionManager collectionManager;
-    private element_info asker = new element_info();
-    private element_info.AttributesToChange enumOfChangingAttributes;
+    private ElementInfo asker = new ElementInfo();
+    private ElementInfo.AttributesToChange enumOfChangingAttributes;
     Coordinates coordinates = new Coordinates();
     Chapter chapter = new Chapter();
 

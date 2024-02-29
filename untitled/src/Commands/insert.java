@@ -4,7 +4,7 @@ import Collection.*;
 import Tools.CollectionManager;
 
 import java.util.Scanner;
-import Tools.element_info;
+import Tools.ElementInfo;
 
 public class insert extends ACommand
 {
@@ -12,7 +12,7 @@ public class insert extends ACommand
     private CollectionManager collectionManager;
     Coordinates coordinates = new Coordinates();
     Chapter chapter = new Chapter();
-    element_info asker = new element_info();
+    ElementInfo asker = new ElementInfo();
 
     public insert(Scanner scanner, CollectionManager collectionManager)
     {
