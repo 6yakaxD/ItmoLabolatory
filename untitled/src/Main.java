@@ -44,7 +44,7 @@ public class Main
             if (console_input.length == 1)
             {
                 String path = console_input[0];
-                ArrayList<SpaceMarine> marine = parser.get_arraylist_from_json(parser.read_from_file(path));
+                ArrayList<SpaceMarine> marine = parser.getStackFromJson(parser.readFromFile(path));
                 if (marine != null) {
                     int count_suck_validate = 0;
                     for (SpaceMarine spaceMarine : marine) {

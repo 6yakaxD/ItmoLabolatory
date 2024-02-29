@@ -2,6 +2,9 @@ package Commands;
 
 import Tools.CollectionManager;
 import Tools.Parser;
+import com.google.gson.Gson;
+import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class save extends ACommand
@@ -16,12 +19,12 @@ public class save extends ACommand
     }
 
     @Override
-    public boolean launch(String[] command)
-    {
+    public boolean launch(String[] command) throws IOException {
         if(command.length == 1)
         {
-            parser.write_to_file("data.json", parser.get_json_from_arraylist(collectionManager.get_main_collection()));
-            System.out.println("-----=[ successfully created json ]=-----");
+
+            parser.writeToFile("data.json", parser.getJsonFromStack(collectionManager.get_main_collection()));
+
             return true;
         }
         else

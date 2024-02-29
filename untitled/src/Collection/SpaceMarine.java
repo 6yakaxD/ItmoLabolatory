@@ -114,11 +114,16 @@ public class SpaceMarine implements Comparable<SpaceMarine>
     }
 
     @Override
-    public int compareTo(SpaceMarine o)
-    {
-        return (int) (this.getHealth() - o.getHealth());
-    }
+    public int compareTo(SpaceMarine o) {
+        if (health <= 0 && o.getHealth() <= 0) return 0;
+        if (health <= 0) return -1;
+        if (o.getHealth() <= 0) return 1;
 
+        double delta = health - o.getHealth();
+        if (delta > 0) return 1;
+        if (delta == 0) return 0;
+        return -1;
+    }
 
     @Override
     public String toString()

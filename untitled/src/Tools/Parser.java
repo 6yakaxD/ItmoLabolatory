@@ -1,8 +1,10 @@
 package Tools;
 
-
 import Collection.SpaceMarine;
 import CustomExeptions.LocalDateTimeAdapter;
+import CustomExeptions.NotCorrectJsonData;
+import CustomExeptions.NotEnoughRightsReadException;
+import CustomExeptions.NotEnoughRightsWriteException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -10,54 +12,73 @@ import com.google.gson.reflect.TypeToken;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.*;
 
-public class Parser
-{
-    public static String path;
+import static Collection.SpaceMarine.validateAllValues;
+
+public class Parser {
+
 
     private final Gson gson = new GsonBuilder()
             .setPrettyPrinting()
             .serializeNulls()
             .setDateFormat("dd/MM/yyyy")
-            .registerTypeAdapter(LocalDateTime.class,
-                    new LocalDateTimeAdapter())
+            .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
             .create();
+
 
 
     /**
      * Получает стек групп из json-строки
+     *
+     * @param json начальная json-строка
+     * @return стек (коллекция) групп
      */
-    public ArrayList<SpaceMarine> get_arraylist_from_json(String json)
-    {
+    public ArrayList<SpaceMarine> getStackFromJson(String json) {
         try {
-            ArrayList<SpaceMarine> spaceMarines = new ArrayList<SpaceMarine>();
+            ArrayList<SpaceMarine> spacemarines = new ArrayList<>();
             if (!json.isEmpty()) {
                 Type collectionType = new TypeToken<ArrayList<SpaceMarine>>() {
                 }.getType();
-                spaceMarines = gson.fromJson(json, collectionType);
+                spacemarines = gson.fromJson(json, collectionType);
 
+                for (SpaceMarine elem : spacemarines) {
+                    if (!validateAllValues(elem)) throw new NotCorrectJsonData();
+                }
+
+               //spacemarines.sort((o1, o2) -> o1.compareTo(o2));
+
+                return spacemarines;
             }
-            return spaceMarines;
-        } catch (Exception e) {
-            return new ArrayList<SpaceMarine>();
         }
+        catch (Exception e)
+        {
+            System.out.println("Json-файл повреждён, данные из него не были взяты. Коллекция, с которой вы работаете пуста");
+        }
+        catch (NotCorrectJsonData e)
+        {
+            System.out.println("Not correct json data");
+        }
+        return new ArrayList<>();
     }
+
 
     /**
      * Получает json-строку из связанного списка работников
+     *
+     * @param spaceMarine стек (коллекция) групп
+     * @return json-строка
      */
-    public String get_json_from_arraylist(ArrayList<SpaceMarine> spaceMarine)
-    {
+    public String getJsonFromStack(ArrayList<SpaceMarine> spaceMarine) {
         try {
-            String json = gson.toJson(spaceMarine);
-            return json;
+            return gson.toJson(spaceMarine);
         } catch (Exception e) {
             System.out.println(e.toString());
-            return "-----=[ error parsing ]=-----";
+            return "ошибка парсинга";
         }
     }
+
+
 
 
     /**
@@ -66,22 +87,29 @@ public class Parser
      * @param fileName имя файла
      * @return String текст из файла
      */
-    public String read_from_file(String fileName)
-    {
+    public String readFromFile(String fileName) {
+        var filePath = new File(fileName);
+        InputStreamReader inputStreamReader;
         try {
-            InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(fileName));
-            String stringFile = "";
+
+            if (!filePath.canRead()) throw new NotEnoughRightsReadException();
+            if (!filePath.canWrite()) System.out.println("Внимание! Вы не сможете использовать команду save!");
+
+            inputStreamReader = new InputStreamReader(new FileInputStream(fileName));
+            StringBuilder stringFile = new StringBuilder();
             int symbolNow = inputStreamReader.read();
             while (symbolNow != -1) {
-                stringFile += String.valueOf((char) symbolNow);
+                stringFile.append(((char) symbolNow));
                 symbolNow = inputStreamReader.read();
             }
             inputStreamReader.close();
-            return stringFile;
-        }
-        catch (IOException e) {
-            System.out.println("-----=[ error json not found ]=-----");
-            return "-----=[ error json reading ]=-----";
+            return stringFile.toString();
+        } catch (NotEnoughRightsReadException e) {
+            System.out.println(e + " Коллекция пуста!");
+            return "";
+        } catch (IOException e) {
+            System.out.println("Json-файл не найден. Коллекция пуста!");
+            return "";
         }
     }
 
@@ -89,20 +117,24 @@ public class Parser
      * Запись текста в файл
      *
      * @param fileName имя файла
-     * @param text текст для файла
+     * @param text     текст для файла
      */
-    public void write_to_file(String fileName, String text)
-    {
+    public void writeToFile(String fileName, String text) {
         try {
+            var filePath = new File(fileName);
+            if (!filePath.canWrite()) throw new NotEnoughRightsWriteException();
+
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName));
             char[] chars = text.toCharArray();
             outputStreamWriter.write(chars, 0, chars.length);
+            System.out.println("Коллекция была успешно сохранена");
             outputStreamWriter.close();
+        } catch (NotEnoughRightsWriteException e) {
+            System.out.println(e.toString());
         } catch (IOException e) {
-            System.out.println("-----=[ error file writing ]=-----");
+            System.out.println("ошибка при записи файла!");
         }
     }
-
 
 
 }
