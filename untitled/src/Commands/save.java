@@ -20,8 +20,8 @@ public class save extends ACommand
     {
         if(command.length == 1)
         {
-            parser.writeToFile("data.json", parser.getJsonFromLinkedHashMap(collectionManager.getSpaceMarineCollection()));
-            System.out.println("Successfully created json");
+            parser.write_to_file("data.json", parser.get_json_from_arraylist(collectionManager.get_main_collection()));
+            System.out.println("-----=[ successfully created json ]=-----");
             return true;
         }
         else

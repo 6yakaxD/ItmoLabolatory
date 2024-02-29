@@ -10,6 +10,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class Parser
@@ -28,33 +29,33 @@ public class Parser
     /**
      * Получает стек групп из json-строки
      */
-    public LinkedHashMap<String, SpaceMarine> getLinckeHashMapFromJson(String json)
+    public ArrayList<SpaceMarine> get_arraylist_from_json(String json)
     {
         try {
-            LinkedHashMap<String, SpaceMarine> spaceMarines = new LinkedHashMap<String, SpaceMarine>();
+            ArrayList<SpaceMarine> spaceMarines = new ArrayList<SpaceMarine>();
             if (!json.isEmpty()) {
-                Type collectionType = new TypeToken<LinkedHashMap<String, SpaceMarine>>() {
+                Type collectionType = new TypeToken<ArrayList<SpaceMarine>>() {
                 }.getType();
                 spaceMarines = gson.fromJson(json, collectionType);
 
             }
             return spaceMarines;
         } catch (Exception e) {
-            return new LinkedHashMap<String, SpaceMarine>();
+            return new ArrayList<SpaceMarine>();
         }
     }
 
     /**
      * Получает json-строку из связанного списка работников
      */
-    public String getJsonFromLinkedHashMap(LinkedHashMap<String, SpaceMarine> studyGroups)
+    public String get_json_from_arraylist(ArrayList<SpaceMarine> spaceMarine)
     {
         try {
-            String json = gson.toJson(studyGroups);
+            String json = gson.toJson(spaceMarine);
             return json;
         } catch (Exception e) {
             System.out.println(e.toString());
-            return "parse error";
+            return "-----=[ error parsing ]=-----";
         }
     }
 
@@ -65,7 +66,7 @@ public class Parser
      * @param fileName имя файла
      * @return String текст из файла
      */
-    public String readFromFile(String fileName)
+    public String read_from_file(String fileName)
     {
         try {
             InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(fileName));
@@ -79,8 +80,8 @@ public class Parser
             return stringFile;
         }
         catch (IOException e) {
-            System.out.println("Json not found");
-            return "error read json";
+            System.out.println("-----=[ error json not found ]=-----");
+            return "-----=[ error json reading ]=-----";
         }
     }
 
@@ -90,7 +91,7 @@ public class Parser
      * @param fileName имя файла
      * @param text текст для файла
      */
-    public void writeToFile(String fileName, String text)
+    public void write_to_file(String fileName, String text)
     {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName));
@@ -98,20 +99,10 @@ public class Parser
             outputStreamWriter.write(chars, 0, chars.length);
             outputStreamWriter.close();
         } catch (IOException e) {
-            System.out.println("error to write file");
+            System.out.println("-----=[ error file writing ]=-----");
         }
     }
 
-    /**
-     * Метод для получения имени файла из переменной окружения
-     *
-     * @return имя файла
-     */
-    public static String getName()
-    {
-        path = System.getenv("appdata");
-        return path;
-    }
 
 
 }

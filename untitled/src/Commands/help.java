@@ -18,7 +18,6 @@ public class help extends ACommand
         if(command.length == 1)
         {
             commandManager.getCommands().values().stream().map(ACommand::toString).forEach(System.out::println);
-
             return true;
         }
         else

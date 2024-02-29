@@ -19,15 +19,15 @@ public class show extends ACommand
     public boolean launch(String[] command) {
         if(command.length == 1)
         {
-            if (collectionManager.getSpaceMarineCollection().isEmpty())
+            if (collectionManager.get_main_collection().isEmpty())
             {
                 System.out.println("-----=[ collection is empty ]=-----");
             }
             else
             {
-                for (Map.Entry<String, SpaceMarine> entry : collectionManager.getSpaceMarineCollection().entrySet())
+                for (SpaceMarine spaceMarine : collectionManager.get_main_collection())
                 {
-                    System.out.println(entry.getValue().toString());
+                    System.out.println(spaceMarine.toString());
                 }
             }
             return true;

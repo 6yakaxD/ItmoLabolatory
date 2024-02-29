@@ -22,10 +22,10 @@ public class replace_if_lowe extends ACommand
     public boolean launch(String[] command) {
         if(command.length == 3)
         {
-            SpaceMarine spaceMarine =  collectionManager.getElementByKeyValue(command[1]);
+            SpaceMarine spaceMarine = collectionManager.get_element_by_name(command[1]);
             if (spaceMarine == null)
             {
-                System.out.println("No such element with key <" + command[1] + ">");
+                System.out.println("-----=[ no such element with name <" + command[1] + "> ]=-----");
             }
             else {
                 String health;
@@ -34,24 +34,24 @@ public class replace_if_lowe extends ACommand
                 {
                     health = command[2];
                     if (health.isEmpty()) throw new MustBeNotEmptyException();
-                    health_double = Integer.parseInt(health);
+                    health_double = Double.parseDouble(health);
                     if (health_double < spaceMarine.getHealth())
                     {
                         spaceMarine.setHealth(health_double);
-                        System.out.println("Done");
+                        System.out.printf("-----=[ new value set in element <%s> ]=-----\n", command[1]);
                     }
                     else
                     {
-                        System.out.println("New value not more than old");
+                        System.out.println("-----=[ new value not more than old ]=-----");
                     }
                 }
                     catch (NumberFormatException  e)
                 {
-                    System.out.println("Health must be a double");
+                    System.out.println("-----=[ health must be a double ]=-----");
                 }
                     catch (MustBeNotEmptyException e)
                 {
-                    System.out.println("Health must be not empty");
+                    System.out.println("-----=[ health must be not empty ]=-----");
                 }
 
             }

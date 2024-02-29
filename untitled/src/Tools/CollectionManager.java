@@ -7,106 +7,47 @@ import java.util.*;
 
 public class CollectionManager
 {
-    // сделать ArrayList
 
+    // сделать ArrayList
     ArrayList<SpaceMarine> main_collection = new ArrayList<SpaceMarine>();
 
-    public void set_main_collection(ArrayList<SpaceMarine> main_collection)
+    public void set_main_collection(ArrayList<SpaceMarine> collection)
     {
-        this.main_collection = main_collection;
+        this.main_collection = collection;
     }
 
-
-    LinkedHashMap<String, SpaceMarine> spaceMarines = new LinkedHashMap<>();
-
-    public void setSpaceMarineCollection(LinkedHashMap<String, SpaceMarine> collection)
+    public ArrayList<SpaceMarine> get_main_collection()
     {
-        spaceMarines = collection;
+        return main_collection;
     }
 
-    public SpaceMarine getElementById(String id)
+    public String get_info_about_main_collection(){
+        return "type - " + main_collection.getClass() + "\n" +
+                "count - " + main_collection.size();
+    }
+
+    public void clear_main_collection()
     {
-        long Id = Long.parseLong(id);
-        SpaceMarine marineToFind = null;
-        for (SpaceMarine marine : spaceMarines.values()) {
-            if (marine.getId() == Id)
-            {
-                marineToFind = marine;
-            }
-        }
-        if (marineToFind == null)
+        if(get_main_collection().isEmpty())
         {
-            System.out.println("No element found with ID: " + Id);
-        }
-        return marineToFind;
-    }
-
-    public void addElement(SpaceMarine marine)
-    {
-        spaceMarines.put(marine.getName(), marine);
-    }
-
-    public void removeElement(String key)
-    {
-        SpaceMarine spaceMarine = getElementByKeyValue(key);
-        if (spaceMarine == null)
-        {
-            System.out.println("No such element with key <" + key + ">");
+            System.out.println("-----=[ collection is empty already ]=-----");
         }
         else {
-            spaceMarines.remove(key);
-            System.out.println("Element with key <" + key +"> was deleted from collection");
-        }
-
-    }
-
-    public SpaceMarine getElementByKeyValue(String name)
-    {
-        return spaceMarines.get(name);
-    }
-
-    public LinkedHashMap<String, SpaceMarine> getSpaceMarineCollection()
-    {
-        return spaceMarines;
-    }
-
-    public String getInfoAboutCollection(){
-        return "type - " + spaceMarines.getClass() + "\n" +
-                "count - " + spaceMarines.size();
-    }
-
-    public long generateNewIdForElement()
-    {
-        return spaceMarines.size() + 1;
-    }
-
-    public void clearFullCollection()
-    {
-        if(getSpaceMarineCollection().isEmpty())
-        {
-            System.out.println("Collection is empty already");
-        }
-        else {
-            System.out.println("Collection was cleared");
-            spaceMarines.clear();
+            main_collection.clear();
+            System.out.println("-----=[ collection was cleared ]=-----");
         }
     }
 
-    public boolean isCollectionEmpty()
+    public void print_category_of_all_elements()
     {
-        return spaceMarines.isEmpty();
-    }
-
-    public void printCategoryOfAllElements()
-    {
-        if (getSpaceMarineCollection().isEmpty())
+        if (get_main_collection().isEmpty())
         {
             System.out.println("Collection is empty");
         }
         else
         {
             List<AstartesCategory> categories = new ArrayList<>();
-            for (SpaceMarine marine : spaceMarines.values()) {
+            for (SpaceMarine marine : main_collection) {
                 categories.add(marine.getAstartesCategory());
             }
 
@@ -118,47 +59,58 @@ public class CollectionManager
         }
     }
 
-    public void removeGreateThatElem(String elem)
+    public void remove_elements_that_health_more_than(double health)
     {
-        SpaceMarine spaceMarine = getElementByKeyValue(elem);
-        if (spaceMarine == null)
+        main_collection.removeIf(marine -> marine.getHealth() > health);
+    }
+
+    public void remove_elements_that_health_less_than(double health)
+    {
+        main_collection.removeIf(marine -> marine.getHealth() < health);
+    }
+
+    public SpaceMarine get_element_by_name(String name) {
+        for (SpaceMarine marine : main_collection) {
+            if (marine.getName().equals(name)) {
+                return marine;
+            }
+        }
+        return null;
+    }
+
+    public void remove_element_by_name(String name)
+    {
+        if (name != null)
         {
-            System.out.println("No such element with key <" + elem + ">");
+            main_collection.remove(get_element_by_name(name));
         }
         else {
-            spaceMarines.values().removeIf(marine -> marine.getHealth() > spaceMarine.getHealth());
-            System.out.println("Removed successfully");
+            System.out.println("-----=[ no suck element " + name + " ]=-----");
         }
+
     }
 
-    public void removeLowerThatElem(String elem_id)
+    public void addElement(SpaceMarine marine)
     {
-        SpaceMarine spaceMarine = getElementByKeyValue(elem_id);
-        if (spaceMarine == null)
+        main_collection.add(marine);
+    }
+
+    public long generate_new_id_for_element()
+    {
+        return main_collection.size() + 1;
+    }
+
+
+    public SpaceMarine get_element_by_id(long id)
+    {
+        for (SpaceMarine spaceMarine : main_collection)
         {
-            System.out.println("No such element with id <" + elem_id + ">");
-
+            if (spaceMarine.getId() == id)
+            {
+                return spaceMarine;
+            }
         }
-        else {
-            spaceMarines.values().removeIf(marine -> marine.getHealth() < spaceMarine.getHealth());
-            System.out.println("Removed successfully");
-        }
-
-    }
-
-    public void replaceIfLowerByAttributeValue(String[] command)
-    {
-        String element_key = command[1];
-        System.out.println();
-
-        SpaceMarine spaceMarine = getElementByKeyValue(element_key);
-
-    }
-
-    public void UPDATE(int id_from_collection_to_update, SpaceMarine spaceMarine)
-    {
-        SpaceMarine a = getElementById(String.valueOf(id_from_collection_to_update));
-        a.update(spaceMarine);
+        return null;
     }
 
 

@@ -17,7 +17,7 @@ public class print_field_ascending_category extends ACommand
     public boolean launch(String[] command) {
         if(command.length == 1)
         {
-            collectionManager.printCategoryOfAllElements();
+            collectionManager.print_category_of_all_elements();
             return true;
         }
         else

@@ -14,7 +14,6 @@ public class exit extends ACommand
     public boolean launch(String[] command) {
         if(command.length == 1)
         {
-            System.out.println("-----=[ Exiting ]=-----");
             System.exit(1);
             return true;
         }

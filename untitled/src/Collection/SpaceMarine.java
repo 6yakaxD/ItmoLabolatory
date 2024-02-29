@@ -113,50 +113,6 @@ public class SpaceMarine implements Comparable<SpaceMarine>
         this.chapter = spaceMarine.chapter;
     }
 
-    public boolean validateExactValue(SpaceMarine spaceMarine, String toCompare)
-    {
-        if (toCompare.equals("id"))
-        {
-            if (spaceMarine.id <= 0) return false;
-        }
-        if (toCompare.equals("name"))
-        {
-            if (spaceMarine.name == null || spaceMarine.name.isEmpty()) return false;
-        }
-        if (toCompare.equals("coordinates"))
-        {
-            if ((spaceMarine.coordinates == null) || (spaceMarine.coordinates.getY() > 617) ) return false;
-        }
-        if (toCompare.equals("health"))
-        {
-            if (spaceMarine.health <= 0) return false;
-        }
-        if (toCompare.equals("category"))
-        {
-            if (spaceMarine.category == null) return false;
-        }
-        if (toCompare.equals("weaponType"))
-        {
-            if (spaceMarine.weaponType == null) return false;
-        }
-        if (toCompare.equals("meleeWeapon"))
-        {
-            if (spaceMarine.meleeWeapon == null) return false;
-        }
-        if (toCompare.equals("id"))
-        {
-            if (spaceMarine.id <= 0) return false;
-        }
-        if (toCompare.equals("chapter"))
-        {
-            if (spaceMarine.chapter == null) return false;
-        }
-
-        return true;
-    }
-
-
-
     @Override
     public int compareTo(SpaceMarine o)
     {

@@ -18,8 +18,17 @@ public class remove_lower extends ACommand
     public boolean launch(String[] command) {
         if(command.length == 2)
         {
-            collectionManager.removeLowerThatElem(command[1]);
-            return true;
+            try
+            {
+                double d = Double.parseDouble(command[1]);
+                collectionManager.remove_elements_that_health_less_than(d);
+                return true;
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("-----=[ health must be double ]=-----");
+                return false;
+            }
         }
         else
         {

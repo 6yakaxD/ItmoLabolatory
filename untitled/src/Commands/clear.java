@@ -16,7 +16,7 @@ public class clear extends ACommand
     public boolean launch(String[] command) {
         if(command.length == 1)
         {
-            collectionManager.clearFullCollection();
+            collectionManager.clear_main_collection();
             return true;
         }
         else

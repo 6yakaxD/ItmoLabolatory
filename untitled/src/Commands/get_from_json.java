@@ -4,6 +4,7 @@ import Collection.SpaceMarine;
 import Tools.CollectionManager;
 import Tools.Parser;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -26,20 +27,19 @@ public class get_from_json extends ACommand
         if(command.length == 2)
         {
             String path = command[1];
-            LinkedHashMap<String, SpaceMarine> marine = parser.getLinckeHashMapFromJson(parser.readFromFile(path));
+            ArrayList<SpaceMarine> marine = parser.get_arraylist_from_json(parser.read_from_file(path));
             int count_suck_validate = 0;
-            for (Map.Entry<String, SpaceMarine> entry : marine.entrySet()) {
-                SpaceMarine spaceMarine = entry.getValue();
+            for (SpaceMarine spaceMarine : marine) {
+                spaceMarine.setId(collectionManager.generate_new_id_for_element());
                 if(!validateAllValues(spaceMarine)){
                     count_suck_validate +=1;
                 }
             }
             if (count_suck_validate == 0){
-                collectionManager.setSpaceMarineCollection(marine);
+                collectionManager.set_main_collection(marine);
             }
             else {
-                System.out.println("Some data validated not correct in json");
-                System.out.println("Data was not insert in collection");
+                System.out.println("-----=[ some data was validated not correct in json | data was not insert in collection ]=-----");
             }
             return true;
         }

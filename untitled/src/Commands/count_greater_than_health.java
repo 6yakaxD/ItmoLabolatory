@@ -11,7 +11,7 @@ public class count_greater_than_health extends ACommand
 
     public count_greater_than_health(CollectionManager collectionManager)
     {
-        super("count_greater_than_health [health_value]", "display the number of elements whose health field value is greater than the specified one");
+        super("count_greater_than_health [health_value]", "display count of elements whose health field value is greater than the specified one");
         this.collectionManager = collectionManager;
     }
 
@@ -25,21 +25,24 @@ public class count_greater_than_health extends ACommand
                 if (command[1].isEmpty()) throw new MustBeNotEmptyException();
                 healthInputValue = Double.parseDouble(command[1]);
                 int count = 0;
-                for (SpaceMarine marine : collectionManager.getSpaceMarineCollection().values()) {
-                    if (marine.getHealth() > healthInputValue) {
+
+                for (int i = 0; i < collectionManager.get_main_collection().size(); i++) {
+                    SpaceMarine a = collectionManager.get_main_collection().get(i);
+                    if (a.getHealth() > healthInputValue) {
                         count++;
                     }
                 }
-                System.out.println("Count of elements in collection with health more than <" + command[1] + "> -> " + count);
+
+                System.out.println("-----=[ " + count + " elements have health more than " + command[1] + " ]=-----");
 
             }
             catch (NumberFormatException  e)
             {
-                System.out.println("health_value must be a double");
+                System.out.println("-----=[ health_value must be a double ]=-----");
             }
             catch (MustBeNotEmptyException e)
             {
-                System.out.println("health_value must be not empty");
+                System.out.println("-----=[ health_value must be not empty ]=-----");
             }
 
             return true;

@@ -6,10 +6,7 @@ import Tools.Console;
 import Tools.Parser;
 
 import java.io.IOException;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 import static Collection.SpaceMarine.validateAllValues;
 
@@ -29,7 +26,7 @@ public class Main
             addCommand("show", new show(collection_manager));
             addCommand("info", new info(collection_manager));
             addCommand("clear", new clear(collection_manager));
-            addCommand("remove_key", new remove_key(collection_manager));
+            addCommand("remove_key", new remove_name(collection_manager));
             addCommand("print_field_ascending_category", new print_field_ascending_category(collection_manager));
             addCommand("count_greater_than_health", new count_greater_than_health(collection_manager));
             addCommand("count_less_than_health", new count_less_than_health(collection_manager));
@@ -47,17 +44,16 @@ public class Main
             if (console_input.length == 1)
             {
                 String path = console_input[0];
-                LinkedHashMap<String, SpaceMarine> marine = parser.getLinckeHashMapFromJson(parser.readFromFile(path));
+                ArrayList<SpaceMarine> marine = parser.get_arraylist_from_json(parser.read_from_file(path));
                 if (marine != null) {
                     int count_suck_validate = 0;
-                    for (Map.Entry<String, SpaceMarine> entry : marine.entrySet()) {
-                        SpaceMarine spaceMarine = entry.getValue();
+                    for (SpaceMarine spaceMarine : marine) {
                         if(!validateAllValues(spaceMarine)){
                             count_suck_validate +=1;
                         }
                     }
                     if (count_suck_validate == 0){
-                        collection_manager.setSpaceMarineCollection(marine);
+                        collection_manager.set_main_collection(marine);
                     }
                     else {
                         System.out.println("-----=[ data from json validated not correct ]=-----");

@@ -16,7 +16,7 @@ public class info extends ACommand
     public boolean launch(String[] command) {
         if(command.length == 1)
         {
-            System.out.println(collectionManager.getInfoAboutCollection());
+            System.out.println(collectionManager.get_info_about_main_collection());
             return true;
         }
         else

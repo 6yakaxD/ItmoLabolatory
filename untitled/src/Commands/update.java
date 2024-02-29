@@ -47,7 +47,7 @@ public class update extends ACommand
                 System.out.println("Id must be not empty");
             }
 
-            SpaceMarine spaceMarine = collectionManager.getElementById(id);
+            SpaceMarine spaceMarine = collectionManager.get_element_by_id(ID);
 
             spaceMarine.setName(asker.askName());
             coordinates.setX(asker.askX());
