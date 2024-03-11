@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ItmoLabolatory:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6aed3598-8f63-46ab-bcba-d946c8bca651" name="Changes" comment="fixed get_from_jsonnn">
+      <change beforePath="$PROJECT_DIR$/untitled/src/Commands/ACommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Commands/ACommand.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;6yakaxD&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="32002b36-6f6a-42fc-a1dd-6770e01670ce" />
+        <option name="url" value="https://github.com/6yakaxD/ItmoLabolatory" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2cvXDozdD5jEJtVsBCDFMqzCvic" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="CustomExeptions" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ItmoLabolatory" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6aed3598-8f63-46ab-bcba-d946c8bca651" name="Changes" comment="" />
+      <created>1708992908830</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708992908830</updated>
+      <workItem from="1708992910005" duration="449000" />
+      <workItem from="1709090776088" duration="643000" />
+      <workItem from="1709081494508" duration="146000" />
+      <workItem from="1709114166354" duration="1058000" />
+      <workItem from="1709105657923" duration="39000" />
+      <workItem from="1709138321930" duration="2733000" />
+      <workItem from="1709185247799" duration="348000" />
+      <workItem from="1709178950485" duration="31054000" />
+      <workItem from="1709236270893" duration="18000" />
+      <workItem from="1709236301821" duration="52000" />
+      <workItem from="1709626345354" duration="187000" />
+      <workItem from="1710146695717" duration="501000" />
+      <workItem from="1710188144861" duration="774000" />
+    </task>
+    <task id="LOCAL-00001" summary="xD">
+      <option name="closed" value="true" />
+      <created>1708993071701</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708993071701</updated>
+    </task>
+    <task id="LOCAL-00002" summary="xD">
+      <option name="closed" value="true" />
+      <created>1708993232328</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708993232328</updated>
+    </task>
+    <task id="LOCAL-00003" summary="xD">
+      <option name="closed" value="true" />
+      <created>1708993340695</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708993340695</updated>
+    </task>
+    <task id="LOCAL-00004" summary="xD">
+      <option name="closed" value="true" />
+      <created>1709091087606</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709091087606</updated>
+    </task>
+    <task id="LOCAL-00005" summary="xD">
+      <option name="closed" value="true" />
+      <created>1709114975778</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709114975778</updated>
+    </task>
+    <task id="LOCAL-00006" summary="xD">
+      <option name="closed" value="true" />
+      <created>1709183413781</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709183413781</updated>
+    </task>
+    <task id="LOCAL-00007" summary="clown_laba">
+      <option name="closed" value="true" />
+      <created>1709183829176</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709183829176</updated>
+    </task>
+    <task id="LOCAL-00008" summary="clown_laba">
+      <option name="closed" value="true" />
+      <created>1709184930742</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709184930742</updated>
+    </task>
+    <task id="LOCAL-00009" summary="undefined_behavior :/">
+      <option name="closed" value="true" />
+      <created>1709212227343</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709212227344</updated>
+    </task>
+    <task id="LOCAL-00010" summary="камит :D">
+      <option name="closed" value="true" />
+      <created>1709214747327</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1709214747327</updated>
+    </task>
+    <task id="LOCAL-00011" summary="зафиксил это говно :/">
+      <option name="closed" value="true" />
+      <created>1709226406019</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709226406019</updated>
+    </task>
+    <task id="LOCAL-00012" summary="говно зафишено :/ исправлен парсинг &#10;но все равно говно, :D java ^~^">
+      <option name="closed" value="true" />
+      <created>1709233794827</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709233794827</updated>
+    </task>
+    <task id="LOCAL-00013" summary="в жопу я не буду писать документацию к коде потому что я и так понятно все обзывал :/">
+      <option name="closed" value="true" />
+      <created>1709236344294</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1709236344294</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed get_from_jsonnn">
+      <option name="closed" value="true" />
+      <created>1710188658962</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710188658962</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="xD" />
+    <MESSAGE value="clown_laba" />
+    <MESSAGE value="undefined_behavior :/" />
+    <MESSAGE value="камит :D" />
+    <MESSAGE value="зафиксил это говно :/" />
+    <MESSAGE value="говно зафишено :/ исправлен парсинг &#10;но все равно говно, :D java ^~^" />
+    <MESSAGE value="в жопу я не буду писать документацию к коде потому что я и так понятно все обзывал :/" />
+    <MESSAGE value="fixed get_from_jsonnn" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed get_from_jsonnn" />
+  </component>
+</project>

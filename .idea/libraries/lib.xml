@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.transaction.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/gson-2.8.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.servlet.jsp.jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/mxparser-1.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.ejb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/xstream-1.4.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.persistence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/javax.resource.jar!/" />
+      <root url="jar://$PROJECT_DIR$/untitled/lib/xmlpull-1.1.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

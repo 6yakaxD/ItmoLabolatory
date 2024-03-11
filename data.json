@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "a",
+    "coordinates": {
+      "x": 651,
+      "y": 51.0
+    },
+    "creationDate": "2024-02-29T22:18:01.408325200",
+    "health": 15.0,
+    "category": "ASSAULT",
+    "weaponType": "HEAVY_BOLTGUN",
+    "meleeWeapon": "CHAIN_SWORD",
+    "chapter": {
+      "name": "fsdfsdfsdf",
+      "world": "sdfsdfsfs"
+    }
+  },
+  {
+    "id": 2,
+    "name": "b",
+    "coordinates": {
+      "x": 651,
+      "y": 51.0
+    },
+    "creationDate": "2024-02-29T22:18:17.170608100",
+    "health": 6149.0,
+    "category": "SUPPRESSOR",
+    "weaponType": "BOLT_RIFLE",
+    "meleeWeapon": "MANREAPER",
+    "chapter": {
+      "name": "fsdfsdfsdf",
+      "world": "sdfsdfsfs"
+    }
+  },
+  {
+    "id": 3,
+    "name": "new_3",
+    "coordinates": {
+      "x": 777,
+      "y": 77.0
+    },
+    "creationDate": "2024-03-11T23:22:14.852249200",
+    "health": 777.0,
+    "category": "ASSAULT",
+    "weaponType": "HEAVY_BOLTGUN",
+    "meleeWeapon": "CHAIN_SWORD",
+    "chapter": {
+      "name": "777",
+      "world": "777"
+    }
+  }
+]
