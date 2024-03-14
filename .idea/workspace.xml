@@ -10,7 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aed3598-8f63-46ab-bcba-d946c8bca651" name="Changes" comment="fixed get_from_jsonnn">
-      <change beforePath="$PROJECT_DIR$/untitled/src/Commands/ACommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Commands/ACommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItmoLabolatory.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ItmoLabolatory.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ItmoLabolatory_jar/ItmoLabolatory.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/Commands/save.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Commands/save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/Tools/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Tools/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +128,9 @@
       <workItem from="1709236301821" duration="52000" />
       <workItem from="1709626345354" duration="187000" />
       <workItem from="1710146695717" duration="501000" />
-      <workItem from="1710188144861" duration="774000" />
+      <workItem from="1710188144861" duration="938000" />
+      <workItem from="1710394382359" duration="45000" />
+      <workItem from="1710395576501" duration="1507000" />
     </task>
     <task id="LOCAL-00001" summary="xD">
       <option name="closed" value="true" />
@@ -235,7 +244,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710188658962</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixed get_from_jsonnn">
+      <option name="closed" value="true" />
+      <created>1710188926959</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1710188926959</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fixed get_from_jsonnn">
+      <option name="closed" value="true" />
+      <created>1710188961608</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1710188961608</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

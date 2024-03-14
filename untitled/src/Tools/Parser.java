@@ -28,12 +28,6 @@ public class Parser {
 
 
 
-    /**
-     * Получает стек групп из json-строки
-     *
-     * @param json начальная json-строка
-     * @return стек (коллекция) групп
-     */
     public ArrayList<SpaceMarine> getStackFromJson(String json) {
         try {
             ArrayList<SpaceMarine> spacemarines = new ArrayList<>();
@@ -62,13 +56,6 @@ public class Parser {
         return new ArrayList<>();
     }
 
-
-    /**
-     * Получает json-строку из связанного списка работников
-     *
-     * @param spaceMarine стек (коллекция) групп
-     * @return json-строка
-     */
     public String getJsonFromStack(ArrayList<SpaceMarine> spaceMarine) {
         try {
             return gson.toJson(spaceMarine);
@@ -81,12 +68,6 @@ public class Parser {
 
 
 
-    /**
-     * Чтение текста из файла
-     *
-     * @param fileName имя файла
-     * @return String текст из файла
-     */
     public String readFromFile(String fileName) {
         var filePath = new File(fileName);
         InputStreamReader inputStreamReader;
@@ -113,27 +94,15 @@ public class Parser {
         }
     }
 
-    /**
-     * Запись текста в файл
-     *
-     * @param fileName имя файла
-     * @param text     текст для файла
-     */
-    public void writeToFile(String fileName, String text) {
-        try {
-            var filePath = new File(fileName);
-            if (!filePath.canWrite()) throw new NotEnoughRightsWriteException();
 
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName));
-            char[] chars = text.toCharArray();
-            outputStreamWriter.write(chars, 0, chars.length);
-            System.out.println("-----=[ collection was saved to json ]=-----");
-            outputStreamWriter.close();
-        } catch (NotEnoughRightsWriteException e) {
-            System.out.println(e.toString());
-        } catch (IOException e) {
-            System.out.println("-----=[ write file error ]=-----");
-        }
+    public void writeToFile(String fileName, String text) throws IOException {
+        File filePath = new File(fileName);
+
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName));
+        char[] chars = text.toCharArray();
+        outputStreamWriter.write(chars, 0, chars.length);
+        System.out.println("-----=[ collection was saved to json ]=-----");
+        outputStreamWriter.close();
     }
 
 
