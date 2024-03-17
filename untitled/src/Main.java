@@ -5,6 +5,7 @@ import Tools.CommandManager;
 import Tools.Console;
 import Tools.Parser;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -15,10 +16,10 @@ public class Main
     public static void main(String[] console_input) throws IOException
     {
         Scanner scanner = new Scanner(System.in);
-
-        try
+        var fillee = new File(console_input[0]);
+        if ((console_input.length == 1) && (fillee.exists()))
         {
-            if (console_input.length == 1)
+            try
             {
                 String path = console_input[0];
 
@@ -64,19 +65,21 @@ public class Main
                 }
                 console.interactiveModeInit();
             }
-            else
+            catch (NoSuchElementException e)
             {
-                System.out.println("----=[ you must insert path to json in command line ]=-----");
+                System.out.println("-----=[ end of input ]=-----");
             }
+            finally
+            {
+                scanner.close();
+            }
+
         }
-        catch (NoSuchElementException e)
+        else
         {
-            System.out.println("-----=[ end of input ]=-----");
+            System.out.println("----=[ you must insert path to json in command line ]=-----");
         }
-        finally
-        {
-            scanner.close();
-        }
+
     }
 
 

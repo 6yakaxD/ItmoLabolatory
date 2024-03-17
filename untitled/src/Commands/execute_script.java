@@ -57,7 +57,7 @@ public class execute_script extends ACommand
                     }
 
 
-                    if (script_command_line[0].equals("insert"))
+                    if (script_command_line[0].equals("insert") && (script_command_line.length>=10))
                     {
                         SpaceMarine spaceMarine = new SpaceMarine();
 

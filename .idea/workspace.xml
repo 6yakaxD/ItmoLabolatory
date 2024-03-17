@@ -11,14 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6aed3598-8f63-46ab-bcba-d946c8bca651" name="Changes" comment="fixed get_from_jsonnn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ItmoLabolatory.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Commands/ACommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Commands/ACommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Commands/save.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Commands/save.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Commands/execute_script.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Commands/execute_script.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Tools/Parser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Tools/Parser$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Tools/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Tools/Parser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled/src/Commands/execute_script.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Commands/execute_script.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/Tools/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Tools/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,7 @@
       <workItem from="1710146695717" duration="501000" />
       <workItem from="1710188144861" duration="938000" />
       <workItem from="1710394382359" duration="45000" />
-      <workItem from="1710395576501" duration="5793000" />
+      <workItem from="1710395576501" duration="8020000" />
     </task>
     <task id="LOCAL-00001" summary="xD">
       <option name="closed" value="true" />
@@ -269,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710397156471</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixed get_from_jsonnn">
+      <option name="closed" value="true" />
+      <created>1710401874213</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1710401874213</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

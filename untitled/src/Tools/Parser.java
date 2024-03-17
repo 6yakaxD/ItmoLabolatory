@@ -71,27 +71,25 @@ public class Parser {
     public String readFromFile(String fileName) {
         var filePath = new File(fileName);
         InputStreamReader inputStreamReader;
-        try {
-
-            if (!filePath.canRead()) throw new NotEnoughRightsReadException();
-            if (!filePath.canWrite()) System.out.println("-----=[ you have not got rights to write in it ]=-----");
-
-            inputStreamReader = new InputStreamReader(new FileInputStream(fileName));
-            StringBuilder stringFile = new StringBuilder();
-            int symbolNow = inputStreamReader.read();
-            while (symbolNow != -1) {
-                stringFile.append(((char) symbolNow));
-                symbolNow = inputStreamReader.read();
+        if(filePath.exists())
+        {
+            try {
+                inputStreamReader = new InputStreamReader(new FileInputStream(fileName));
+                StringBuilder stringFile = new StringBuilder();
+                int symbolNow = inputStreamReader.read();
+                while (symbolNow != -1) {
+                    stringFile.append(((char) symbolNow));
+                    symbolNow = inputStreamReader.read();
+                }
+                inputStreamReader.close();
+                return stringFile.toString();
+            } catch (IOException e) {
+                System.out.println("-----=[ json file not found ]=-----");
+                return "";
             }
-            inputStreamReader.close();
-            return stringFile.toString();
-        } catch (NotEnoughRightsReadException e) {
-            System.out.println(e.toString());
-            return "";
-        } catch (IOException e) {
-            System.out.println("-----=[ json file not found ]=-----");
-            return "";
         }
+
+        return "";
     }
 
 
