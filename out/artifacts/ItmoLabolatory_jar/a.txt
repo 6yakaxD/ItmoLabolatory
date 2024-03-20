@@ -1,0 +1,13 @@
+
+name1
+55
+55
+54
+ASSAULT
+MELTAGUN
+MANREAPER
+chaptname
+chaptword
+info
+show
+execute_script b.txt

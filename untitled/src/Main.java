@@ -15,6 +15,11 @@ public class Main
 {
     public static void main(String[] console_input) throws IOException
     {
+        if (console_input.length == 0)
+        {
+            System.out.println("----=[ you must insert path to json in command line ]=-----");
+            System.exit(0);
+        }
         Scanner scanner = new Scanner(System.in);
         var fillee = new File(console_input[0]);
         if ((console_input.length == 1) && (fillee.exists()))
@@ -77,7 +82,7 @@ public class Main
         }
         else
         {
-            System.out.println("----=[ you must insert path to json in command line ]=-----");
+            System.out.println("----=[ you must insert only path to json in command line ]=-----");
         }
 
     }

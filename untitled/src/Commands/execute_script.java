@@ -18,7 +18,7 @@ public class execute_script extends ACommand
     Scanner scanner;
     CollectionManager collectionManager;
 
-    public static List<String> scriptStack = new ArrayList<>();
+    public static List<String> script_used_recursion = new ArrayList<>();
 
     public execute_script(CommandManager commandManager, Scanner scanner, CollectionManager collectionManager)
     {
@@ -39,7 +39,7 @@ public class execute_script extends ACommand
                 if (!file_script.canRead()) throw new NotEnoughRightsReadException();
                 Scanner userScanner = new Scanner(file_script);
 
-                scriptStack.add(command[1].trim());
+                script_used_recursion.add(command[1].trim());
 
                 if (!userScanner.hasNext()) throw new EmptyFileException();
 
@@ -57,7 +57,7 @@ public class execute_script extends ACommand
                     }
 
 
-                    if (script_command_line[0].equals("insert") && (script_command_line.length>=10))
+                    if (script_command_line[0].equals("insert"))
                     {
                         SpaceMarine spaceMarine = new SpaceMarine();
 
@@ -264,30 +264,30 @@ public class execute_script extends ACommand
                             collectionManager.addElement(spaceMarine);
                         }
                     }
-                    else {
-                        if (script_command_line[0].equals("execute_script"))
-                        {
-                            if (scriptStack.contains(script_command_line[1])) {
-                                scriptStack.clear();
-                                throw new ScriptRecursionException();
-                            } else {
-                                scriptStack.add(script_command_line[1]);
-                            }
-                        }
 
 
-                        ACommand ACom = commandManager.getCommand(script_command_line[0]);
-
-                        if (ACom != null) {
-                            ACom.launch(script_command_line);
+                    if (script_command_line[0].equals("execute_script"))
+                    {
+                        if (script_used_recursion.contains(script_command_line[1])) {
+                            script_used_recursion.clear();
+                            throw new ScriptRecursionException();
                         } else {
-                            System.out.println("-----=[ <" + script_command_line[0]+ "> not found use <help> ]=-----");
+                            script_used_recursion.add(script_command_line[1]);
                         }
+                    }
+
+
+                    ACommand ACom = commandManager.getCommand(script_command_line[0]);
+
+                    if (ACom != null) {
+                        ACom.launch(script_command_line);
+                    } else {
+                        System.out.println("-----=[ <" + script_command_line[0]+ "> not found use <help> ]=-----");
                     }
 
                 }
 
-                scriptStack.remove(command[1]);
+                script_used_recursion.remove(command[1]);
 
                 System.out.printf("-----=[ <%s> script execution completed ]=-----\n" ,command[1]);
             }
@@ -313,7 +313,7 @@ public class execute_script extends ACommand
             }
             finally
             {
-                scriptStack.clear();
+                script_used_recursion.clear();
             }
 
             return true;

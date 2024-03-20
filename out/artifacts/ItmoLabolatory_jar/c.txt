@@ -1,0 +1,4 @@
+name
+f
+show
+execute_script b.txt
