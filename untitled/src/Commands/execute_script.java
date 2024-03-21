@@ -28,6 +28,224 @@ public class execute_script extends ACommand
         this.collectionManager = collectionManager;
     }
 
+    public boolean execute_insert(List<String> insertLines)
+    {
+        if(insertLines.size()!=9)
+        {
+            System.out.println("Error in Insert script command");
+            System.exit(0);
+        }
+        SpaceMarine spaceMarine = new SpaceMarine();
+
+        String name = null;
+        int x = 0;
+        float y = 0;
+        Coordinates coord = new Coordinates();
+        double health = 0;
+        AstartesCategory astartesCategory = null;
+        Weapon weapon = null;
+        MeleeWeapon meleeWeapon = null;
+        String chapterName = null;
+        String chapterWorld = null;
+        Chapter chapter = new Chapter();
+
+        try
+        {
+            name = insertLines.get(0).trim();
+            if (name.isEmpty()) throw new MustBeNotEmptyException();
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("The name can't be empty");
+            System.exit(0);
+        }
+        catch (NoSuchElementException e)
+        {
+            System.out.println("The name can't be loaded or recognized");
+            System.exit(0);
+            if (!scanner.hasNext())
+            {
+                System.out.println("Ctrl-D exit!");
+                System.exit(0);
+            }
+        }
+        catch (IllegalStateException e)
+        {
+            System.out.println("Unexpected error!");
+            System.exit(0);
+        }
+        try
+        {
+            String s = insertLines.get(1).trim();
+            if (s.isEmpty()) throw new MustBeNotEmptyException();
+            x = Integer.parseInt(s);
+        }
+        catch (NumberFormatException  e)
+        {
+            System.out.println("X must be an integer");
+            System.exit(0);
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("X must be not empty");
+            System.exit(0);
+        }
+        try
+        {
+            String s = insertLines.get(2).trim();
+            if (s.isEmpty()) throw new MustBeNotEmptyException();
+            y = Float.parseFloat(s);
+            if (y > 617) throw new MustBeLessThan617();
+        }
+        catch (NumberFormatException e)
+        {
+            System.out.println("Y must be a float");
+            System.exit(0);
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("Y must be not empty");
+            System.exit(0);
+        }
+        catch (MustBeLessThan617 e)
+        {
+            System.out.println("Y must be less 617");
+            System.exit(0);
+        }
+        coord.setY(y);
+        coord.setX(x);
+        try
+        {
+            String s = insertLines.get(3).trim();
+            if (s.isEmpty()) throw new MustBeNotEmptyException();
+            health = Double.parseDouble(s);
+            if (health <= 0) throw new MustBeMoreThanZero();
+        }
+        catch (MustBeMoreThanZero e)
+        {
+            System.out.println("Health value must be more than 0");
+            System.exit(0);
+        }
+        catch (NumberFormatException e)
+        {
+            System.out.println("Health must be a float");
+            System.exit(0);
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("Health must be not empty");
+            System.exit(0);
+        }
+        try
+        {
+            String s = insertLines.get(4).toUpperCase().trim();
+            if(s.isEmpty()) throw new MustBeNotEmptyException();
+            astartesCategory = AstartesCategory.valueOf(s.toUpperCase());
+        }
+        catch (NoSuchElementException exception)
+        {
+            System.out.println("Type can't be recognized");
+            System.exit(0);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            System.out.println("There is no such AstartesCategory value in the category");
+            System.exit(0);
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("Astartes Category must be not empty");
+            System.exit(0);
+        }
+        try
+        {
+            String s = insertLines.get(5).toUpperCase().trim();
+            if(s.isEmpty()) throw new MustBeNotEmptyException();
+            weapon = Weapon.valueOf(s.toUpperCase());
+        }
+        catch (NoSuchElementException exception)
+        {
+            System.out.println("Type can't be recognized");
+            System.exit(0);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            System.out.println("There is no such WeaponType value in the category");
+            System.exit(0);
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("Weapon Type must be not empty");
+            System.exit(0);
+        }
+        try
+        {
+            String s = insertLines.get(6).toUpperCase().trim();
+            if(s.isEmpty()) throw new MustBeNotEmptyException();;
+            meleeWeapon = MeleeWeapon.valueOf(s.toUpperCase());
+        }
+        catch (NoSuchElementException exception)
+        {
+            System.out.println("Type can't be recognized");
+            System.exit(0);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            System.out.println("There is no such MeleeWeapon value in the category");
+            System.exit(0);
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("Melee Weapon must be not empty");
+            System.exit(0);
+        }
+        try
+        {
+            chapterName = insertLines.get(7).trim();
+            if (chapterName.isEmpty()) throw new MustBeNotEmptyException();
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("Chapter Name must be not empty");
+            System.exit(0);
+        }
+        try
+        {
+            chapterWorld = insertLines.get(8).trim();
+            if (chapterWorld.isEmpty()) throw new MustBeNotEmptyException();
+        }
+        catch (MustBeNotEmptyException e)
+        {
+            System.out.println("Chapter world must be not empty");
+            System.exit(0);
+        }
+
+        spaceMarine.setId(collectionManager.generate_new_id_for_element());
+        spaceMarine.setName(name);
+        coord.setX(x);
+        coord.setY(y);
+        spaceMarine.setCoordinates(coord);
+        spaceMarine.setCreationDate(LocalDateTime.now());
+        spaceMarine.setHealth(health);
+        spaceMarine.setAstartesCategory(astartesCategory);
+        spaceMarine.setWeaponType(weapon);
+        spaceMarine.setMeleeWeapon(meleeWeapon);
+        chapter.setName(chapterName);
+        chapter.setWorld(chapterName);
+        spaceMarine.setChapter(chapter);
+
+        if(!validateAllValues(spaceMarine)){
+            System.out.println("-----=[ Not validated data ]=-----");
+            System.exit(0);
+            return false;
+        }
+        else {
+            collectionManager.addElement(spaceMarine);
+            return true;
+        }
+
+    }
+
 
     @Override
     public boolean launch(String[] command) throws IOException {
@@ -59,210 +277,28 @@ public class execute_script extends ACommand
 
                     if (script_command_line[0].equals("insert"))
                     {
-                        SpaceMarine spaceMarine = new SpaceMarine();
-
-                        String name = null;
-                        int x = 0;
-                        float y = 0;
-                        Coordinates coord = new Coordinates();
-                        double health = 0;
-                        AstartesCategory astartesCategory = null;
-                        Weapon weapon = null;
-                        MeleeWeapon meleeWeapon = null;
-                        String chapterName = null;
-                        String chapterWorld = null;
-                        Chapter chapter = new Chapter();
 
                         List<String> insertLines = new ArrayList<>();
                         for (int i = 0; i < 9 && userScanner.hasNext(); i++) {
                             insertLines.add(userScanner.nextLine());
                         }
 
-
-                        try
+//                        for (String s: insertLines)
+//                        {
+//                            System.out.println(s);
+//                        }
+//                        System.out.println(insertLines.size());
+                        //execute_insert(insertLines)
+                        if (execute_insert(insertLines))
                         {
-                            name = insertLines.get(0).trim();
-                            if (name.isEmpty()) throw new MustBeNotEmptyException();
+                            continue;
                         }
-                        catch (MustBeNotEmptyException e)
+                        else
                         {
-                            System.out.println("The name can't be empty");
-                        }
-                        catch (NoSuchElementException e)
-                        {
-                            System.out.println("The name can't be loaded or recognized");
-                            if (!scanner.hasNext())
-                            {
-                                System.out.println("Ctrl-D exit!");
-                                System.exit(0);
-                            }
-                        }
-                        catch (IllegalStateException e)
-                        {
-                            System.out.println("Unexpected error!");
+                            System.out.println("Error in Insert script command ");
                             System.exit(0);
                         }
 
-
-
-                        try
-                        {
-                            String s = insertLines.get(1).trim();
-                            if (s.isEmpty()) throw new MustBeNotEmptyException();
-                            x = Integer.parseInt(s);
-                        }
-                        catch (NumberFormatException  e)
-                        {
-                            System.out.println("X must be an integer");
-                        }
-                        catch (MustBeNotEmptyException e)
-                        {
-                            System.out.println("X must be not empty");
-                        }
-
-
-                        try
-                        {
-                            String s = insertLines.get(2).trim();
-                            if (s.isEmpty()) throw new MustBeNotEmptyException();
-                            y = Float.parseFloat(s);
-                            if (y > 617) throw new MustBeLessThan617();
-                        }
-                        catch (NumberFormatException e)
-                        {
-                            System.out.println("Y must be a float");
-                        }
-                        catch (MustBeNotEmptyException e)
-                        {
-                            System.out.println("Y must be not empty");
-                        }
-                        catch (MustBeLessThan617 e)
-                        {
-                            System.out.println("Y must be less 617");
-                        }
-                        coord.setY(y);
-                        coord.setX(x);
-
-                        try
-                        {
-                            String s = insertLines.get(3).trim();
-                            if (s.isEmpty()) throw new MustBeNotEmptyException();
-                            health = Double.parseDouble(s);
-                            if (health <= 0) throw new MustBeMoreThanZero();
-                        }
-                        catch (MustBeMoreThanZero e)
-                        {
-                            System.out.println("Health value must be more than 0");
-                        }
-                        catch (NumberFormatException e)
-                        {
-                            System.out.println("Health must be a float");
-                        }
-                        catch (MustBeNotEmptyException e)
-                        {
-                            System.out.println("Health must be not empty");
-                        }
-
-                        try
-                        {
-                            String s = insertLines.get(4).toUpperCase().trim();
-                            if(s.isEmpty()) throw new MustBeNotEmptyException();
-                            astartesCategory = AstartesCategory.valueOf(s.toUpperCase());
-                        }
-                        catch (NoSuchElementException exception)
-                        {
-                            System.out.println("Type can't be recognized");
-                        }
-                        catch (IllegalArgumentException exception)
-                        {
-                            System.out.println("There is no such value in the category");
-                        }
-                        catch (MustBeNotEmptyException e)
-                        {
-                            System.out.println("Astartes Category must be not empty");
-                        }
-
-
-                        try
-                        {
-                            String s = insertLines.get(5).toUpperCase().trim();
-                            if(s.isEmpty()) throw new MustBeNotEmptyException();
-                            weapon = Weapon.valueOf(s.toUpperCase());
-                        }
-                        catch (NoSuchElementException exception)
-                        {
-                            System.out.println("Type can't be recognized");
-                        }
-                        catch (IllegalArgumentException exception)
-                        {
-                            System.out.println("There is no such value in the category");
-                        }
-                        catch (MustBeNotEmptyException e)
-                        {
-                            System.out.println("Weapon Type must be not empty");
-                        }
-
-
-                        try
-                        {
-                            String s = insertLines.get(6).toUpperCase().trim();
-                            if(s.isEmpty()) throw new MustBeNotEmptyException();;
-                            meleeWeapon = MeleeWeapon.valueOf(s.toUpperCase());
-                        }
-                        catch (NoSuchElementException exception)
-                        {
-                            System.out.println("Type can't be recognized");
-                        }
-                        catch (IllegalArgumentException exception)
-                        {
-                            System.out.println("There is no such value in the category");
-                        }
-                        catch (MustBeNotEmptyException e)
-                        {
-                            System.out.println("Melee Weapon must be not empty");
-                        }
-
-
-                        try
-                        {
-                            chapterName = insertLines.get(7).trim();
-                            if (chapterName.isEmpty()) throw new MustBeNotEmptyException();
-                        }
-                        catch (MustBeNotEmptyException e)
-                        {
-                            System.out.println("Chapter Name must be not empty");
-                        }
-
-                        try
-                        {
-                            chapterWorld = insertLines.get(8).trim();
-                            if (chapterWorld.isEmpty()) throw new MustBeNotEmptyException();
-                        }
-                        catch (MustBeNotEmptyException e)
-                        {
-                            System.out.println("Chapter world must be not empty");
-                        }
-
-                        spaceMarine.setId(collectionManager.generate_new_id_for_element());
-                        spaceMarine.setName(name);
-                        coord.setX(x);
-                        coord.setY(y);
-                        spaceMarine.setCoordinates(coord);
-                        spaceMarine.setCreationDate(LocalDateTime.now());
-                        spaceMarine.setHealth(health);
-                        spaceMarine.setAstartesCategory(astartesCategory);
-                        spaceMarine.setWeaponType(weapon);
-                        spaceMarine.setMeleeWeapon(meleeWeapon);
-                        chapter.setName(chapterName);
-                        chapter.setWorld(chapterName);
-                        spaceMarine.setChapter(chapter);
-
-                        if(!validateAllValues(spaceMarine)){
-                            System.out.println("-----=[ Not validated data ]=-----");
-                        }
-                        else {
-                            collectionManager.addElement(spaceMarine);
-                        }
                     }
 
 
@@ -311,6 +347,10 @@ public class execute_script extends ACommand
             {
                 System.out.println("-----=[ undefined error ]=-----");
             }
+//            catch (ErrorInsertCommandInScript e)
+//            {
+//                System.out.println("-----=[ insert error not correct input ]=-----");
+//            }
             finally
             {
                 script_used_recursion.clear();

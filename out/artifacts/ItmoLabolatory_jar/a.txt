@@ -1,13 +1,11 @@
-
-name1
-55
-55
-54
+insert
+name
+1
+2
+3
 ASSAULT
 MELTAGUN
 MANREAPER
 chaptname
 chaptword
-info
-show
 execute_script b.txt

@@ -10,10 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aed3598-8f63-46ab-bcba-d946c8bca651" name="Changes" comment="fixed get_from_jsonnn">
+      <change afterPath="$PROJECT_DIR$/untitled/src/CustomExeptions/ErrorInsertCommandInScript.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ItmoLabolatory_jar/ItmoLabolatory.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ItmoLabolatory_jar/ItmoLabolatory.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ItmoLabolatory_jar/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ItmoLabolatory_jar/a.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ItmoLabolatory_jar/dat.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ItmoLabolatory_jar/dat.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Commands/execute_script.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Commands/execute_script.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItmoLabolatory/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled/src/Commands/execute_script.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Commands/execute_script.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/CustomExeptions/EmptyFileException.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/CustomExeptions/EmptyFileException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/CustomExeptions/MustBeLessThan617.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/CustomExeptions/MustBeLessThan617.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/CustomExeptions/MustBeMoreThanZero.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/CustomExeptions/MustBeMoreThanZero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/CustomExeptions/MustBeNotEmptyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/CustomExeptions/MustBeNotEmptyException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +136,7 @@
       <workItem from="1710394382359" duration="45000" />
       <workItem from="1710395576501" duration="8020000" />
       <workItem from="1710687503489" duration="197000" />
-      <workItem from="1710973249578" duration="1752000" />
+      <workItem from="1710973249578" duration="7555000" />
     </task>
     <task id="LOCAL-00001" summary="xD">
       <option name="closed" value="true" />
@@ -282,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710687543190</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fixed get_from_jsonnn">
+      <option name="closed" value="true" />
+      <created>1710975036483</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1710975036483</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,5 +325,16 @@
     <MESSAGE value="в жопу я не буду писать документацию к коде потому что я и так понятно все обзывал :/" />
     <MESSAGE value="fixed get_from_jsonnn" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed get_from_jsonnn" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/untitled/src/Commands/execute_script.java</url>
+          <line>277</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

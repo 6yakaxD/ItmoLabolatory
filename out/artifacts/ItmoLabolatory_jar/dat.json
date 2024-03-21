@@ -15,5 +15,22 @@
       "name": "sdf",
       "world": "sdf"
     }
+  },
+  {
+    "id": 2,
+    "name": "name",
+    "coordinates": {
+      "x": 1,
+      "y": 2.0
+    },
+    "creationDate": "2024-03-21T03:19:08.747877600",
+    "health": 3.0,
+    "category": "ASSAULT",
+    "weaponType": "MELTAGUN",
+    "meleeWeapon": "MANREAPER",
+    "chapter": {
+      "name": "chaptname",
+      "world": "chaptname"
+    }
   }
 ]
